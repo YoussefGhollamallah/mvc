@@ -1,6 +1,7 @@
 <?php 
 
 require_once "controllers/TestController.php";
+require_once "controllers/AdminController.php";
 require_once "controllers/HomeController.php";
 
 
@@ -22,11 +23,15 @@ if($_GET["action"]) {
             if(function_exists($action)) {
                 
                 if ($action == 'getTest') {
-
                     getTest();
                 } elseif ($action == "getHome") {
                     getHome();
+                } elseif ($action == "getListArticles") {
+                    getListArticles();
+                } elseif ( $action == "addArticlePage") {
+                    addArticlePage();
                 }
+                
             }
         }
     }
