@@ -1,6 +1,7 @@
 <?php 
 
 require_once "controllers/TestController.php";
+require_once "controllers/HomeController.php";
 
 
 if($_GET["action"]) {
@@ -9,7 +10,6 @@ if($_GET["action"]) {
 
     $params = explode("/", $_GET["action"]);
 
-    print_r($params);
     if(!empty($params[0])) {
 
         $controller = $params[0];
@@ -21,9 +21,11 @@ if($_GET["action"]) {
 
             if(function_exists($action)) {
                 
-                if($action == 'getTest') {
+                if ($action == 'getTest') {
 
                     getTest();
+                } elseif ($action == "getHome") {
+                    getHome();
                 }
             }
         }
