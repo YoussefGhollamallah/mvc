@@ -13,3 +13,11 @@ function getArticles()
     return $resultat;
 
 }
+
+function addArticles($titre, $contenu, $image){
+
+    $date = date("Y-m-d h-m-i");
+    $connexion = connexionBDD();
+    $connexion->prepare("INSERT INTO article(article_id, titre, contenu, image, date) VALUES (null, ?, ?,?,?)")
+    ->execute([$titre, $contenu, $image,$date]);
+}
