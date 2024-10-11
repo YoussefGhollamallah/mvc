@@ -2,7 +2,7 @@
 
 require "connexion.php";
 
-function getArticle()
+function getArticles()
 {
     $connexion = connexionBDD();
 
