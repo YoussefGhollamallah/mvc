@@ -1,12 +1,12 @@
 <?php
 
-require "models/modelArticle.php";
+require_once "models/modelArticle.php";
 
 function getHome()
 {
     $articles = getArticles();
 
-    require "views/HomeView.php";
+    require_once "views/HomeView.php";
 }
 
 
