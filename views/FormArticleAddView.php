@@ -1,0 +1,29 @@
+<?php
+$title = "formulaire d'ajout";
+
+ob_start();
+?>
+
+<form action="#" method="POST">
+    <div class="form-group">
+        <label for="titre">Titre</label>
+        <input type="text" class="form-control" id="titre" name="titre">
+    </div>
+
+    <div class="form-group">
+        <label for="contenu">Contenu</label>
+        <textarea class="form-control" id="contenu" name="contenu" rows="3"></textarea>
+    </div>
+
+    <div class="form-group">
+        <label for="image">Image</label>
+        <input type="file" class="form-control-file" id="image" name="image">
+    </div>
+
+    <div class="form-group">
+        <input type="submit" name="submit">
+    </div>
+
+</form>
+
+<?php $content = ob_get_clean(); ?>
