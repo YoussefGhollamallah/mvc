@@ -22,7 +22,7 @@ ob_start();
             <td><?php echo $article["titre"]; ?></td>
             <td><?php echo $article["contenu"]; ?></td>
             <td><?php echo $article["date"]; ?></td>
-            <td><a href="#" class="btn btn-warning">modifier</a><a href="#" class="btn btn-danger">supprimer</a></td>
+            <td><a href="modifyArticlePage/<?php echo $article["article_id"];?>" class="btn btn-warning">modifier</a><a href="#" class="btn btn-danger">supprimer</a></td>
             </tr>
 
         <?php }; ?>
