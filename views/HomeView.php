@@ -14,7 +14,7 @@ ob_start()
                 <p class="card-text"><?php echo $article["contenu"]; ?></p>
                 <p class="card-text"><small class="text-muted"><?php echo $article["date"]; ?></small></p>
             </div>
-            <img src="https://placehold.co/250x250" class="card-img-bottom" alt="image article">
+            <img src="../assets/uploads/<?php echo $article["image"]; ?>" width="250px" height="250px" class="card-img-bottom" alt="image article">
         </div>
         <?php } ?>
     </div>
