@@ -16,17 +16,28 @@ function getArticles()
 
 function addArticles($titre, $contenu, $image){
 
-    $date = date("Y-m-d h-m-i");
+    $date = date("Y-m-d h-i-s");
     $connexion = connexionBDD();
-    $connexion->prepare("INSERT INTO article(article_id, titre, contenu, image, date) VALUES (null, ?, ?,?,?)")
+    $connexion->prepare("INSERT INTO article (article_id, titre, contenu, image, date) VALUES (null, ?, ?,?,?)")
     ->execute([$titre, $contenu, $image,$date]);
 }
 
 function modifyArticle($id, $titre, $contenu, $image)
 {
-    $date = date("Y-m-d h-m-i");
+    $date = date("Y-m-d h-i-s");
     $connexion = connexionBDD();
 
     $connexion->prepare("UPDATE article SET titre = ?, contenu = ?, image = ?, date = ? WHERE article_id = ?")
     ->execute([$titre, $contenu, $image, $date, $id]);
+}
+
+function getArticleInfo($id)
+{
+
+    $connexion = connexionBDD();
+    $requete = $connexion->prepare("SELECT * FROM article WHERE article_id = ?");
+    $requete->execute([$id]);
+    $result = $requete->fetch();
+
+    return $result;
 }
