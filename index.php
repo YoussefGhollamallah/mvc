@@ -30,6 +30,11 @@ if($_GET["action"]) {
                     getListArticles();
                 } elseif ( $action == "addArticlePage") {
                     addArticlePage();
+                } elseif ( $action == "modifyArticlePage") {
+                    $id = $params[2];
+                    if(!empty($id)) {
+                        modifyArticlePage($id);
+                    }
                 }
                 
             }
