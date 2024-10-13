@@ -21,3 +21,12 @@ function addArticles($titre, $contenu, $image){
     $connexion->prepare("INSERT INTO article(article_id, titre, contenu, image, date) VALUES (null, ?, ?,?,?)")
     ->execute([$titre, $contenu, $image,$date]);
 }
+
+function modifyArticle($id, $titre, $contenu, $image)
+{
+    $date = date("Y-m-d h-m-i");
+    $connexion = connexionBDD();
+
+    $connexion->prepare("UPDATE article SET titre = ?, contenu = ?, image = ?, date = ? WHERE article_id = ?")
+    ->execute([$titre, $contenu, $image, $date, $id]);
+}
