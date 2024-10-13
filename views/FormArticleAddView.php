@@ -4,7 +4,7 @@ $title = "formulaire d'ajout";
 ob_start();
 ?>
 
-<form action="#" method="POST">
+<form action="" method="POST" enctype="multipart/form-data" >
     <div class="form-group">
         <label for="titre">Titre</label>
         <input type="text" class="form-control" id="titre" name="titre">
@@ -17,7 +17,7 @@ ob_start();
 
     <div class="form-group">
         <label for="image">Image</label>
-        <input type="file" class="form-control-file" id="image" name="image">
+        <input type="file" class="form-control-file" id="image" name="file">
     </div>
 
     <div class="form-group">
@@ -26,4 +26,7 @@ ob_start();
 
 </form>
 
-<?php $content = ob_get_clean(); ?>
+<?php $content = ob_get_clean(); 
+require_once "layout.php";
+
+?>
