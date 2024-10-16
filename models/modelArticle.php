@@ -41,3 +41,11 @@ function getArticleInfo($id)
 
     return $result;
 }
+
+function deleteArticle($id)
+{
+    $connexion = connexionBDD();
+    $requete = $connexion->prepare("DELETE FROM article WHERE article_id = ?");
+    $requete->execute([$id]);
+    header("Location: /mvc/AdminController/getListArticles");
+}
