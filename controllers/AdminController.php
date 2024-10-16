@@ -13,7 +13,7 @@ function getListArticles()
 function addArticlePage()
 {
     if (!empty($_POST) AND !empty($_FILES)) {
-        if (validation()) {  // Change ici: si la validation réussit
+        if (validation()) {
             addArticles($_POST["titre"], $_POST["contenu"], $_FILES["file"]['name']);
         }
     }
@@ -34,6 +34,13 @@ function modifyArticlePage($id)
         }
     }
     require_once "views/FormArticleModifyView.php";
+}
+
+function deleteArticlePage($id)
+{
+    $article = getArticleInfo($id);
+    unlink("assets/uploads/".$article["image"]);
+    deleteArticle($id);
 }
 
 function validation()
