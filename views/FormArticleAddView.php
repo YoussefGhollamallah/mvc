@@ -4,7 +4,7 @@ $title = "formulaire d'ajout";
 ob_start();
 ?>
 
-<form action="" method="POST" enctype="multipart/form-data" >
+<form action="mvc/AdminController/addArticlePage" method="POST" enctype="multipart/form-data" >
     <div class="form-group">
         <label for="titre">Titre</label>
         <input type="text" class="form-control" id="titre" name="titre">
