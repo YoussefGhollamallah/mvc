@@ -35,8 +35,12 @@ if($_GET["action"]) {
                     if(!empty($id)) {
                         modifyArticlePage($id);
                     }
+                } elseif ( $action == "deleteArticlePage") {
+                    $id = $params[2];
+                    if(!empty($id)) {
+                        deleteArticlePage($id);
+                    }
                 }
-                
             }
         }
     }
